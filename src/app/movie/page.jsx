@@ -1,33 +1,36 @@
 import { getallMovies } from "@/services/product.service";
 import { data } from "autoprefixer";
-
+import Link from "next/link";
 const MoviePage = async () => {
   const movieData = await getallMovies();
   console.log("Movie", movieData);
 
   return (
     <main>
-      <div className="flex px-10 py-10 snap-proximity snap-x ">
-        {movieData.payload.map((data) => (
-          <div
-            key={movieData.id}
-            className="max-w-sm rounded overflow-hidden shadow-lg snap-center mx-10"
-          >
-            <img
-              className="w-full"
-              src="https://tailwindcss.com/img/card-top.jpg"
-              alt="Sunset in the mountains"
-            />
-            <div className="px-6 py-4">
-              <div className="font-bold text-xl mb-2">The Coldest Sunset</div>
-              <p className="text-gray-700 text-base">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Voluptatibus quia, nulla! Maiores et perferendis eaque,
-                exercitationem praesentium nihil.
-              </p>
-            </div>
-          </div>
-        ))}
+      <div className="w-full mx-auto p-5  bg-red-950 overflow-x-auto flex snap-x snap-mandatory no-scrollbar">
+        <div className="flex flex-nowrap ">
+          {/* card */}
+          {movieData.payload.map((data) => (
+            <Link
+              href={`/movie/${data.movie_id}`}
+              key={data?.movie_id}
+              className="border-8 w-64 flex-shrink-0 flex flex-col justify-between leading-normal bg-slate-200 snap-center hide-scroll-bar mr-5"
+            >
+              {/* <Link href={`/movie/${data.movie_id}`}> addd</Link> */}
+              <img src={data.image} className="w-full mb-3" />
+              <div className="p-4 pt-2">
+                <div className="mb-8">
+                  <p className="text-gray-900 font-bold text-lg mb-2 hover:text-indigo-600 inline-block">
+                    {data.movie_title}
+                  </p>
+                  <p className="text-gray-700 text-sm line-clamp-3">
+                    {data.description}
+                  </p>
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
       </div>
     </main>
   );

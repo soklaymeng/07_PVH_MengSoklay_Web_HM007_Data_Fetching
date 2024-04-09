@@ -1,19 +1,17 @@
-import { getallMovies } from "@/services/product.service";
-import { data } from "autoprefixer";
+import { getMovieByGener } from "@/services/product.service";
 
-const CardComponent = async () => {
-  const movieData = await getallMovies();
-  console.log("Movie data", movieData);
-
+const GetMovieByGenrer = async () => {
+  //  const movieData = await getallMovies();
+  const movieData = await getMovieByGener("Drama");
   return (
     <main>
-      <div className="w-full mx-auto p-5 overflow-x-auto no-scrollbar flex snap-x snap-mandatory">
+      <div className="w-full mx-auto p-5  bg-red-950 overflow-x-auto no-scrollbar snap-x snap-mandatory ">
         <div className="flex flex-nowrap ">
           {/* card */}
           {movieData.payload.map((data) => (
             <div
               key={data?.movie_id}
-              className="border-8 w-64 flex-shrink-0 flex flex-col justify-between leading-normal bg-slate-200 snap-center mr-5"
+              className="border-8 w-64 flex-shrink-0 flex flex-col justify-between leading-normal bg-slate-200 snap-center"
             >
               {/* <link href={`/CardComponent/${data?.movie_id}`}>Click</link> */}
               <img src={data.image} className="w-full mb-3" />
@@ -39,4 +37,4 @@ const CardComponent = async () => {
   );
 };
 
-export default CardComponent;
+export default GetMovieByGenrer;
