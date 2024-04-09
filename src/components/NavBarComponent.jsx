@@ -117,7 +117,7 @@ const NavbarComponent = () => {
             <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0">
               <li>
                 <a
-                  href="#"
+                  href="/"
                   className="block py-2 pl-3 pr-4 text-white "
                   aria-current="page"
                 >
@@ -126,7 +126,7 @@ const NavbarComponent = () => {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="/"
                   className="block py-2 pl-3 pr-4 text-white rounded hover:bg-gray-100"
                 >
                   Popular
@@ -134,7 +134,7 @@ const NavbarComponent = () => {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="/"
                   className="block py-2 pl-3 pr-4 text-white rounded hover:bg-gray-100 "
                 >
                   Romance
@@ -142,7 +142,7 @@ const NavbarComponent = () => {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="/"
                   className="block py-2 pl-3 pr-4 text-white rounded hover:bg-gray-100 "
                 >
                   Anime

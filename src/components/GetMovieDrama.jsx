@@ -1,8 +1,8 @@
 import { getMovieByGener } from "@/services/product.service";
 import Link from "next/link";
-const GetMovieByGenrer = async () => {
-  //  const movieData = await getallMovies();
-  const movieData = await getMovieByGener(`Hollywood`);
+const GetMovieDrama = async () => {
+  const movieData = await getMovieByGener(`drama`);
+  console.log("Movie", movieData);
   return (
     <main>
       <div className="w-full mx-auto p-5  bg-red-950 overflow-x-auto no-scrollbar snap-x snap-mandatory ">
@@ -14,9 +14,8 @@ const GetMovieByGenrer = async () => {
               key={data?.movie_id}
               className="border-8 w-64 flex-shrink-0 flex flex-col justify-between leading-normal bg-slate-200 snap-center mr-5"
             >
-              {/* <link href={`/CardComponent/${data?.movie_id}`}>Click</link> */}
               <img src={data.image} className="w-full mb-3" />
-              {/* <Link href={"/movie"}>click</Link> */}
+
               <div className="p-4 pt-2">
                 <div className="mb-8">
                   <a
@@ -38,4 +37,4 @@ const GetMovieByGenrer = async () => {
   );
 };
 
-export default GetMovieByGenrer;
+export default GetMovieDrama;

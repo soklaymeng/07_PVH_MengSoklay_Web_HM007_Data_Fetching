@@ -1,5 +1,6 @@
 import { getallMovies } from "@/services/product.service";
 import { data } from "autoprefixer";
+import Link from "next/link";
 
 const CardComponent = async () => {
   const movieData = await getallMovies();
@@ -11,7 +12,8 @@ const CardComponent = async () => {
         <div className="flex flex-nowrap ">
           {/* card */}
           {movieData.payload.map((data) => (
-            <div
+            <Link
+              href={`/movie/${data.movie_id}`}
               key={data?.movie_id}
               className="border-8 w-64 flex-shrink-0 flex flex-col justify-between leading-normal bg-slate-200 snap-center mr-5"
             >
@@ -31,7 +33,7 @@ const CardComponent = async () => {
                   </p>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

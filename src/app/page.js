@@ -1,6 +1,9 @@
 import CardComponent from "@/components/CardComponent";
+import GetMovieAction from "@/components/GetMovieAction";
 import GetMovieByGenrer from "@/components/GetMovieByGener";
-import Image from "next/image";
+import GetMovieDrama from "@/components/GetMovieDrama";
+import GetMovieSienceFiction from "@/components/GetMovieScienceFiction";
+
 
 export default function Home() {
   return (
@@ -11,6 +14,12 @@ export default function Home() {
     <h1 className="text-white text-2xl font-bold mt-4 p-5">Drama Movie</h1>
     
     <GetMovieByGenrer/>
+    
+    <GetMovieDrama/>
+  
+    
+    <GetMovieAction/>
+    <GetMovieSienceFiction/>
    </main>
   );
 }

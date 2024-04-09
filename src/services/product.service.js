@@ -19,3 +19,4 @@ export async function getMovieByGener(genre){
     const data= res.json();
     return data;
 }
+//get movies by genre Drama
