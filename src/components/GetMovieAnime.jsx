@@ -1,12 +1,12 @@
 import { getMovieByGener } from "@/services/product.service";
 import Link from "next/link";
-const GetMovieDrama = async () => {
-  const movieData = await getMovieByGener(`drama`);
-  console.log("Movie", movieData);
+const GetMovieAnime = async () => {
+  const movieData = await getMovieByGener(`anime`);
+  console.log("Movie data", movieData);
   return (
     <main>
       <div className="w-full mx-auto p-5  bg-red-950 overflow-x-auto no-scrollbar snap-x snap-mandatory ">
-        <h1 className="text-white text-2xl font-bold mt-4 p-5">Drama Movie</h1>
+        <h1 className="text-white text-2xl font-bold mt-4 p-5">Anime Movie</h1>
         <div className="flex flex-nowrap ">
           {/* card */}
           {movieData.payload.map((data) => (
@@ -38,4 +38,4 @@ const GetMovieDrama = async () => {
   );
 };
 
-export default GetMovieDrama;
+export default GetMovieAnime;

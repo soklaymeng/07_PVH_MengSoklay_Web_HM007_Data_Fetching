@@ -5,6 +5,9 @@ const GetMovieSienceFiction = async () => {
   return (
     <main>
       <div className="w-full mx-auto p-5  bg-red-950 overflow-x-auto no-scrollbar snap-x snap-mandatory ">
+        <h1 className="text-white text-2xl font-bold mt-4 p-5">
+          Science Fiction Movie
+        </h1>
         <div className="flex flex-nowrap ">
           {/* card */}
           {movieData.payload.map((data) => (
